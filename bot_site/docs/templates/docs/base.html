@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/reset.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/materialize.css' %}" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/style.css' %}">
+</head>
+<body class="indigo darken-2">
+    <nav>
+        <div class="nav-wrapper z-depth-3 indigo darken-4">
+            <a href="{% url 'docs:index' %}" class="brand-logo left">Kuduro Bot</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'docs:command' %}">COMMANDS</a></li>
+        </div>
+    </nav>
+
+    <ul class="sidenav indigo darken-4" id="mobile-demo">
+        <li><a href="{% url 'docs:command' %}"><span class="white-text">COMMANDS</span></a></li>
+    </ul>
+{% block content %}
+{% endblock %}
+</body>
+<footer class="page-footer z-depth-3 indigo darken-3">
+
+    <div class="footer-copyright indigo darken-4">
+        <div class="container">
+            Website made by <a href="https://github.com/HenryXV" target="_blank" class="grey-text text-lighten-4">HenryXV</a>
+            <a href="https://t.co/p0DSElsmcx?amp=1" target="_blank"
+               class="grey-text text-lighten-4 right">Kuduro Invitation</a>
+        </div>
+</footer>
+    <script type="text/javascript" src="{% static 'docs/js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'docs/js/init.js' %}"></script>
+</html>

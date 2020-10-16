@@ -1,0 +1,18 @@
+{% extends "docs/base.html" %}
+
+{% block content %}
+    {% load static %}
+        <div class=" my-card-panel indigo darken-2 row">
+            <div class="valign-wrapper col s5">
+                <img width="500"
+                 src="{% static 'docs/images/kuduro-protegido.png' %}">
+            </div>
+            <div class="white-text col s7">
+                <h3>ADD KUDURO TO YOUR SERVER</h3>
+                <a href="https://t.co/p0DSElsmcx?amp=1"
+                   target="_blank"
+                   class="waves-effect waves-light btn-large blue hoverable z-depth-1">
+                <i class="material-icons left">add</i>INVITE</a>
+            </div>
+        </div>
+{% endblock %}
