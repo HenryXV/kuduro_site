@@ -74,6 +74,16 @@ SESSION_COOKIE_SECURE = True
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5klk5lob226qh',
+        'USER': 'oytajjjmytxeqe',
+        'PASSWORD': 'DATABASE_PASSWORD',
+        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
