@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 load_dotenv()
-SECRET_KEY = os.getenv('DJANGO_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -92,10 +92,10 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5klk5lob226qh',
-        'USER': 'oytajjjmytxeqe',
+        'NAME': 'd4du7ka5gr234l',
+        'USER': 'okxjldpusnptnb',
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'HOST': 'ec2-3-218-75-21.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -142,3 +142,7 @@ MEDIA_ROOT = 'bot_site/docs/static/docs/images'
 STATIC_ROOT = 'bot_site/docs/static'
 
 STATIC_URL = '/static/'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
