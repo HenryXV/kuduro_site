@@ -1,0 +1,59 @@
+.my-card-panel {
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  padding: 24px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.command-cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.command_card {
+    display: inline-block;
+    padding: 5px 28px;
+    margin: 5px 8px 5px 0;
+    background-color: white;
+}
+
+.radius {
+    border-radius: 3px;
+}
+
+.fs {
+    font-size: 18px;
+}
+.command_cards.max > .command_card {
+  display: block;
+  background-color: transparent;
+  margin: 5px 0 12px 0;
+  cursor: auto;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+.command_cards.max > .command_card span {
+  padding: 3px 15px;
+  margin-left: -5px;
+}
+
+.command_cards.max > .command_card span:first-child {
+  background-color: white;
+  border-radius: 3px 0 0 3px;
+}
+.command_cards.max > .command_card span:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.command_cards.max > .command_card span:only-child {
+  border-radius: 3px;
+}
+
+.command_cards.max > .command_card span:nth-child(n+2) {
+  background-color: #0077b6;
+}

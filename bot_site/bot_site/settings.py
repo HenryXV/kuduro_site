@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c3wrb@1xm3-#6k$v93@4_fyhj2md+u7)%=5_d&!y77qdg^l^k#'
+load_dotenv()
+SECRET_KEY = os.getenv('DJANGO_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://kudurobot.herokuapp.com']
 
 
 # Application definition
@@ -71,6 +74,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bot_site.wsgi.application'
 
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_SSL_REDIRECT = True
+
+SECURE_HSTS_SECONDS = 31536000
+
+SECURE_HSTS_PRELOAD = True
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -80,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd5klk5lob226qh',
         'USER': 'oytajjjmytxeqe',
-        'PASSWORD': '98e043a3ecd0e51737612d53f576aa6aa16080f253177a4d9ebb7c525a7cfb90',
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
         'PORT': '5432',
     }
@@ -122,5 +136,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+MEDIA_ROOT = 'bot_site/docs/static/docs/images'
+
+STATIC_ROOT = 'bot_site/docs/static'
 
 STATIC_URL = '/static/'
