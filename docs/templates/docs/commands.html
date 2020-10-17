@@ -19,7 +19,7 @@
                         <ul>
                             {% for key in commands_info %}
                                 {% if key.category == 'music' %}
-                                    <li><a href="#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
                                     </span>
                                     </a></li>
                                 {% endif %}
