@@ -165,7 +165,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'bot_site.storage.WhiteNoiseStaticFilesStorage'
 
 # Configure Django App for Heroku.
 import django_heroku
