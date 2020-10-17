@@ -33,7 +33,7 @@
                         <ul>
                             {% for key in commands_info %}
                                 {% if key.category == 'playlist' %}
-                                    <li><a href="#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
                                     </span>
                                 </a></li>
                                 {% endif %}
@@ -47,7 +47,7 @@
                         <ul>
                             {% for key in commands_info %}
                                 {% if key.category == 'lyrics' %}
-                                    <li><a href="#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
                                     </span>
                                 </a></li>
                                 {% endif %}
