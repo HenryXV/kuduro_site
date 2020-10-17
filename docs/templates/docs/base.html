@@ -4,10 +4,11 @@
 {% load static %}
 
 <head>
+    <base href="/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link type="text/css" rel="stylesheet" href="{% static 'staticfiles/docs/css/reset.css' %}">
-    <link type="text/css" rel="stylesheet" href="{% static 'staticfiles/docs/css/materialize.css' %}" media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="{% static 'staticfiles/docs/css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/reset.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/materialize.css' %}" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="{% static 'docs/css/style.css' %}">
 </head>
 <body class="indigo darken-2">
     <nav>
@@ -34,6 +35,6 @@
                class="grey-text text-lighten-4 right">Kuduro Invitation</a>
         </div>
 </footer>
-    <script type="text/javascript" src="{% static 'staticfiles/docs/js/materialize.js' %}"></script>
-    <script type="text/javascript" src="{% static 'staticfiles/docs/js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'docs/js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'docs/js/init.js' %}"></script>
 </html>
