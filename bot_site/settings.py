@@ -118,10 +118,10 @@ SESSION_COOKIE_SECURE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5klk5lob226qh',
-        'USER': 'oytajjjmytxeqe',
+        'NAME': 'd4du7ka5gr234l',
+        'USER': 'okxjldpusnptnb',
         'PASSWORD': 'DATABASE_PASSWORD',
-        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'HOST': 'ec2-3-218-75-21.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
