@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://kudurobot.herokuapp.com']
+ALLOWED_HOSTS = ['https://kudurosite.herokuapp.com']
 
 
 # Application definition
