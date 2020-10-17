@@ -1,1 +1,1 @@
-web: gunicorn bot_site.wsgi
+web: gunicorn kudurosite.wsgi
