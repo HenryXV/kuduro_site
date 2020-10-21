@@ -13,7 +13,7 @@ def update_json_file(sender, **kwargs):
         import json
         commands_list = list()
 
-        for command in Command.objects.all():
+        for command in Command.objects.order_by('command_category', 'command_name'):
 
             id = command.id
 

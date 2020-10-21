@@ -1,70 +1,6 @@
 [
     {
         "category": "music",
-        "name": "resume",
-        "info": "Resumes the track currently paused",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": []
-    },
-    {
-        "category": "music",
-        "name": "queue",
-        "info": "Shows the tracks currently queued",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": [
-            "q",
-            "playlist"
-        ]
-    },
-    {
-        "category": "music",
-        "name": "pause",
-        "info": "Pauses the track currently playing",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": []
-    },
-    {
-        "category": "music",
-        "name": "playing_now",
-        "info": "Shows the track currently playing",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": [
-            "pn",
-            "now",
-            "currentaudio",
-            "playing"
-        ]
-    },
-    {
-        "category": "music",
-        "name": "next",
-        "info": "Skips to the next track on the queue",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": [
-            "n"
-        ]
-    },
-    {
-        "category": "music",
-        "name": "stop",
-        "info": "Clear the whole queue and disconnects the bot from your channel",
-        "usage": [],
-        "options": [],
-        "examples": [],
-        "aliases": []
-    },
-    {
-        "category": "music",
         "name": "clear",
         "info": "Removes all tracks from the queue",
         "usage": [],
@@ -74,12 +10,29 @@
     },
     {
         "category": "music",
-        "name": "shuffle",
-        "info": "Randomizes all track positions in the queue",
+        "name": "join",
+        "info": "Connects the bot to your current channel",
         "usage": [],
         "options": [],
         "examples": [],
         "aliases": []
+    },
+    {
+        "category": "music",
+        "name": "jump",
+        "info": "Skips to the specified track",
+        "usage": [
+            "track position",
+            "track name"
+        ],
+        "options": [],
+        "examples": [
+            "5",
+            "tim maia ela partiu"
+        ],
+        "aliases": [
+            "j"
+        ]
     },
     {
         "category": "music",
@@ -104,20 +57,20 @@
         ]
     },
     {
-        "category": "playlist",
-        "name": "view_playlists",
-        "info": "View all of your saved playlists",
+        "category": "music",
+        "name": "next",
+        "info": "Skips to the next track on the queue",
         "usage": [],
         "options": [],
         "examples": [],
         "aliases": [
-            "vp"
+            "n"
         ]
     },
     {
         "category": "music",
-        "name": "join",
-        "info": "Connects the bot to your current channel",
+        "name": "pause",
+        "info": "Pauses the track currently playing",
         "usage": [],
         "options": [],
         "examples": [],
@@ -141,19 +94,28 @@
     },
     {
         "category": "music",
-        "name": "volume",
-        "info": "Changes the volume between 1 and 100",
-        "usage": [
-            "volume"
-        ],
+        "name": "playing_now",
+        "info": "Shows the track currently playing",
+        "usage": [],
         "options": [],
-        "examples": [
-            "1",
-            "50",
-            "100"
-        ],
+        "examples": [],
         "aliases": [
-            "vol"
+            "pn",
+            "now",
+            "currentaudio",
+            "playing"
+        ]
+    },
+    {
+        "category": "music",
+        "name": "queue",
+        "info": "Shows the tracks currently queued",
+        "usage": [],
+        "options": [],
+        "examples": [],
+        "aliases": [
+            "q",
+            "playlist"
         ]
     },
     {
@@ -189,19 +151,61 @@
     },
     {
         "category": "music",
-        "name": "jump",
-        "info": "Skips to the specified track",
+        "name": "resume",
+        "info": "Resumes the track currently paused",
+        "usage": [],
+        "options": [],
+        "examples": [],
+        "aliases": []
+    },
+    {
+        "category": "music",
+        "name": "shuffle",
+        "info": "Randomizes all track positions in the queue",
+        "usage": [],
+        "options": [],
+        "examples": [],
+        "aliases": []
+    },
+    {
+        "category": "music",
+        "name": "stop",
+        "info": "Clear the whole queue and disconnects the bot from your channel",
+        "usage": [],
+        "options": [],
+        "examples": [],
+        "aliases": []
+    },
+    {
+        "category": "music",
+        "name": "volume",
+        "info": "Changes the volume between 1 and 100",
         "usage": [
-            "track position",
-            "track name"
+            "volume"
         ],
         "options": [],
         "examples": [
-            "5",
-            "tim maia ela partiu"
+            "1",
+            "50",
+            "100"
         ],
         "aliases": [
-            "j"
+            "vol"
+        ]
+    },
+    {
+        "category": "playlist",
+        "name": "delete_playlist",
+        "info": "Deletes the playlist with the specified name",
+        "usage": [
+            "name"
+        ],
+        "options": [],
+        "examples": [
+            "As mais tristes do Tim Maia"
+        ],
+        "aliases": [
+            "dp"
         ]
     },
     {
@@ -216,7 +220,7 @@
             "As mais tristes do Tim Maia"
         ],
         "aliases": [
-            "lp"
+            "loadp"
         ]
     },
     {
@@ -236,17 +240,13 @@
     },
     {
         "category": "playlist",
-        "name": "delete_playlist",
-        "info": "Deletes the playlist with the specified name",
-        "usage": [
-            "name"
-        ],
+        "name": "view_playlists",
+        "info": "View all of your saved playlists",
+        "usage": [],
         "options": [],
-        "examples": [
-            "As mais tristes do Tim Maia"
-        ],
+        "examples": [],
         "aliases": [
-            "dp"
+            "vp"
         ]
     },
     {
