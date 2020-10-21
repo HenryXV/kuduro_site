@@ -7,9 +7,9 @@ class Category(models.Model):
         return f'{self.category_name}'
 
 class Command(models.Model):
+    command_category = models.ForeignKey(Category, on_delete=models.CASCADE)
     command_name = models.CharField(max_length=25)
     command_info = models.CharField(max_length=200)
-    command_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.command_name} - {self.command_info} - {self.command_category}'
