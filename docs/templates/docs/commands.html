@@ -2,130 +2,132 @@
 
 {% block content %}
     {% load static %}
-    <div class="my-card-panel indigo darken-3">
-    <ul id="slide-out" class="sidenav indigo darken-3">
-        <li><div class="user-view">
-                <div class="background">
-                    <img src="{% static 'docs/images/back.jpg' %}">
-                </div>
-                <a><img class="circle" src="{% static 'docs/images/kuduro.jpg' %}"></a>
-                <a><span class="white-text name">Kuduro</span></a>
-            </div></li>
-        <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-                <li>
-                    <a class="collapsible-header"><span class="white-text">Music Commands</span></a>
-                    <div class="collapsible-body indigo darken-3">
-                        <ul>
-                            {% for key in commands_info %}
-                                {% if key.category == 'music' %}
-                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
-                                    </span>
+    <main>
+        <div class="my-card-panel indigo darken-3">
+        <ul id="slide-out" class="sidenav indigo darken-3">
+            <li><div class="user-view">
+                    <div class="background">
+                        <img src="{% static 'docs/images/back.jpg' %}">
+                    </div>
+                    <a><img class="circle" src="{% static 'docs/images/kuduro.jpg' %}"></a>
+                    <a><span class="white-text name">Kuduro</span></a>
+                </div></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header"><span class="white-text">Music Commands</span></a>
+                        <div class="collapsible-body indigo darken-3">
+                            <ul>
+                                {% for key in commands_info %}
+                                    {% if key.category == 'music' %}
+                                        <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                        </span>
+                                        </a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header"><span class="white-text">Playlist Commands</span></a>
+                        <div class="collapsible-body indigo darken-3">
+                            <ul>
+                                {% for key in commands_info %}
+                                    {% if key.category == 'playlist' %}
+                                        <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                        </span>
                                     </a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><span class="white-text">Playlist Commands</span></a>
-                    <div class="collapsible-body indigo darken-3">
-                        <ul>
-                            {% for key in commands_info %}
-                                {% if key.category == 'playlist' %}
-                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
-                                    </span>
-                                </a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><span class="white-text">Lyrics Commands</span></a>
-                    <div class="collapsible-body indigo darken-3">
-                        <ul>
-                            {% for key in commands_info %}
-                                {% if key.category == 'lyrics' %}
-                                    <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
-                                    </span>
-                                </a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="fixed-action-btn">
-        <a data-target="slide-out" class="sidenav-trigger hoverable show-on-large waves-effect btn-floating
-        btn-large blue">
-        <i class="large material-icons">menu</i></a>
-    </div>
-        <div>
-            <span class="white-text"><h2 class="center-align"><strong><b>Command List</b></strong></h2></span>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header"><span class="white-text">Lyrics Commands</span></a>
+                        <div class="collapsible-body indigo darken-3">
+                            <ul>
+                                {% for key in commands_info %}
+                                    {% if key.category == 'lyrics' %}
+                                        <li><a href="/commands#{{ key.name|slugify }}"><span class="white-text">{{ key.name }}
+                                        </span>
+                                    </a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="fixed-action-btn">
+            <a data-target="slide-out" class="sidenav-trigger show-on-large hoverable waves-effect btn-floating
+            btn-large blue">
+            <i class="large material-icons">menu</i></a>
         </div>
-
-        {% for key in commands_info %}
-            <div class="card-panel indigo darken-2">
-                <div class="section">
-                    <a id="{{ key.name|slugify }}"><span class="white-text"><h5><strong>
-                        <b>{{ key.name }}</b></strong></h5></span></a>
-                    <span class="white-text"><h6>{{ key.info }}</h6></span>
-                </div>
-
-                {% if key.usage %}
-                    <div class="divider"></div>
-                    <div class="section max">
-                        <span class="white-text"><h5><strong><b>usage</b></strong></h5></span>
-                        <ul class="command_cards max">
-                        {% for u in key.usage %}
-                            <li class="command_card fs">
-                            <span class="blue-text z-depth-1 hoverable">{{ key.name }}</span>
-                            <span class="white-text z-depth-1 hoverable">{{ u }}</span>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    </div>
-                {% endif %}
-
-                {% if key.options %}
-                    <div class="divider"></div>
-                    <div class="section">
-                        <span class="blue-text command_card radius fs"><h5><strong><b>options</b>
-                        </strong></h5></span>
-                        {% for o in key.options %}
-                            <span class="white-text z-depth-1 hoverable">{{ o }}</span>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                {% if key.examples %}
-                    <div class="divider"></div>
-                    <div class="section">
-                        <span class="white-text"><h5><strong><b>examples</b></strong></h5></span>
-                        <ul class="command_cards max">
-                        {% for e in key.examples %}
-                            <li class="command_card fs">
-                            <span class="blue-text z-depth-1 hoverable">{{ key.name }}</span>
-                            <span class="white-text z-depth-1 hoverable">{{ e }}</span>
-                            </li>
-                        {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-
-                {% if key.aliases %}
-                    <div class="divider"></div>
-                    <div class="section">
-                        <span class="white-text"><h5><strong><b>aliases</b></strong></h5></span>
-                        {% for a in key.aliases %}
-                            <span class="blue-text command_card radius fs z-depth-1 hoverable">{{ a }}</span>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+            <div>
+                <span class="white-text"><h2 class="center-align"><strong><b>Command List</b></strong></h2></span>
             </div>
-        {% endfor %}
-    </div>
+
+            {% for key in commands_info %}
+                <div class="card-panel indigo darken-2">
+                    <div class="section">
+                        <a id="{{ key.name|slugify }}"><span class="white-text"><h5><strong>
+                            <b>{{ key.name }}</b></strong></h5></span></a>
+                        <span class="white-text"><h6>{{ key.info }}</h6></span>
+                    </div>
+
+                    {% if key.usage %}
+                        <div class="divider"></div>
+                        <div class="section max">
+                            <span class="white-text"><h5><strong><b>usage</b></strong></h5></span>
+                            <ul class="command_cards max">
+                            {% for u in key.usage %}
+                                <li class="command_card fs">
+                                <span class="blue-text z-depth-1 hoverable">{{ key.name }}</span>
+                                <span class="white-text z-depth-1 hoverable">{{ u }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        </div>
+                    {% endif %}
+
+                    {% if key.options %}
+                        <div class="divider"></div>
+                        <div class="section">
+                            <span class="blue-text command_card radius fs"><h5><strong><b>options</b>
+                            </strong></h5></span>
+                            {% for o in key.options %}
+                                <span class="white-text z-depth-1 hoverable">{{ o }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if key.examples %}
+                        <div class="divider"></div>
+                        <div class="section">
+                            <span class="white-text"><h5><strong><b>examples</b></strong></h5></span>
+                            <ul class="command_cards max">
+                            {% for e in key.examples %}
+                                <li class="command_card fs">
+                                <span class="blue-text z-depth-1 hoverable">{{ key.name }}</span>
+                                <span class="white-text z-depth-1 hoverable">{{ e }}</span>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    {% if key.aliases %}
+                        <div class="divider"></div>
+                        <div class="section">
+                            <span class="white-text"><h5><strong><b>aliases</b></strong></h5></span>
+                            {% for a in key.aliases %}
+                                <span class="blue-text command_card radius fs z-depth-1 hoverable">{{ a }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}
