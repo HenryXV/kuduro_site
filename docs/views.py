@@ -1,14 +1,9 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.shortcuts import render
 from django.views import generic
-from django.template import loader
-from django.template.response import TemplateResponse
-from django.core import serializers
 import json
 
 
-from .models import Category, Command, Usage, Option, Example, Alias
+from .models import Command
 
 def IndexView(request):
     return render(request, 'docs/index.html')
