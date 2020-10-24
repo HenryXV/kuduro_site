@@ -11,7 +11,7 @@ def update_json_file(sender, **kwargs):
     if sender.__name__ in list_of_models:
 
         import json
-        commands_list = list()
+        commands_list = []
 
         for command in Command.objects.order_by('command_category', 'command_name'):
 
