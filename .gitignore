@@ -140,3 +140,4 @@ cython_debug/
 # custom
 materialize.css
 materialize.js
+.idea/

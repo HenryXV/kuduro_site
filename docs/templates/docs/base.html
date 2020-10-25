@@ -4,6 +4,14 @@
 {% load static %}
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1WM60137V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M1WM60137V');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
     <link rel="icon" type="image/png" href="{% static 'docs/images/kuduro-protegido.png' %}">
@@ -19,7 +27,8 @@
             <a href="{% url 'docs:index' %}" class="brand-logo left">Kuduro Bot</a>
             <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{% url 'docs:command' %}">COMMANDS</a></li>
+                <li><a href="{% url 'docs:command' %}">COMMANDS</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -30,13 +39,13 @@
 {% endblock %}
 </body>
 <footer class="page-footer z-depth-3 indigo darken-3">
-
     <div class="footer-copyright indigo darken-4">
         <div class="container">
             Website made by <a href="https://github.com/HenryXV" target="_blank" class="grey-text text-lighten-4">HenryXV</a>
             <a href="https://t.co/p0DSElsmcx?amp=1" target="_blank"
                class="grey-text text-lighten-4 right">Kuduro Invitation</a>
         </div>
+    </div>
 </footer>
     <script type="text/javascript" src="{% static 'docs/js/materialize.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'docs/js/init.js' %}"></script>
